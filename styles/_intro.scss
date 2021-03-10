@@ -1,0 +1,129 @@
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+nav {
+  @include flex(space-between, center, row);
+  min-height: 10vh;
+  width: 60%;
+  flex-wrap: wrap;
+  .logo {
+    @include flex(flex-start, center, row);
+    flex: 1 1 10rem;
+    h1 {
+      margin: 2rem;
+    }
+  }
+  ul {
+    @include flex(space-around, center, row);
+    flex: 1 1 40rem;
+  }
+}
+
+.intro {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  @include flex(space-between, center, row);
+  flex-wrap: wrap;
+  h2 {
+    font-size: 8rem;
+    padding-top: 2rem;
+    background: $gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+  }
+  h3 {
+    font-size: 6rem;
+    padding: 2rem 0rem;
+  }
+  p {
+    padding-top: 1rem;
+    color: $gray-text;
+  }
+}
+.intro-social {
+  margin-top: 2rem;
+  a {
+    padding: 2rem;
+  }
+}
+
+.splash {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  z-index: -1;
+}
+.active {
+  padding: 1rem 3rem;
+  color: white;
+  background: $gray-text;
+  border-radius: 2rem;
+}
+.intro-text {
+  flex: 2 1 40rem;
+}
+.intro-images {
+  flex: 1 1 60rem;
+}
+#leaf-left {
+  animation: plant 1s ease infinite alternate;
+}
+#leaf-right {
+  animation: plant 1s ease infinite alternate 0.5s;
+}
+#me {
+  animation: me 2s ease infinite alternate;
+  transform-origin: bottom;
+}
+#clock {
+  animation: clock 12s infinite linear;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+#dot1 {
+  animation: dots 1s ease infinite alternate-reverse;
+}
+#dot2 {
+  animation: dots 1s ease infinite alternate-reverse 0.3s;
+}
+#dot3 {
+  animation: dots 1s ease infinite alternate-reverse 0.4s;
+}
+
+@keyframes dots {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-5%);
+  }
+}
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(3600deg);
+  }
+}
+@keyframes me {
+  from {
+    transform: rotateZ(2.5deg);
+  }
+  to {
+    transform: rotateZ(-0.5deg);
+  }
+}
+@keyframes plant {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
